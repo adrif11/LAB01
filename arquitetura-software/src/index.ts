@@ -1,5 +1,5 @@
-import { Reserva } from "./model3/reserva"
-import { Hotel } from './model3/hotel'
+import { Reserva } from "./model/reserva"
+import { Hotel } from './model/hotel'
 
 const hotel = new Hotel()
 const dataReserva1 = new Date(2024, 10, 15);

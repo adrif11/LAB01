@@ -1,22 +1,23 @@
-import { Reserva } from "./model3/reserva"
-import { Hotel } from './model3/hotel'
+import { Livro } from "./model/livro"
+import { Biblioteca } from './model/biblioteca'
 
-const hotel = new Hotel()
-const dataReserva1 = new Date(2024, 10, 15);
-const dataSaida1 = new Date(2024, 10, 16);
+const biblioteca = new Biblioteca()
 
-hotel.registrarReserva(new Reserva(11, "Joao Vitor Oliveira", new Date(2024, 11, 10), new Date(2024, 11, 20)))
-hotel.registrarReserva(new Reserva(22, "Eduardo Santana", new Date(2024, 10, 30), new Date(2024, 11, 15)))
-hotel.registrarReserva(new Reserva(33, "Bruno Martins", new Date(2024, 11, 16), new Date(2024, 11, 20)))
+biblioteca.adicionarLivro(new Livro(1, "Memórias Póstumas de Brás Cubas", "Machado de Assis ", true))
+biblioteca.adicionarLivro(new Livro(2, "Clarice Lispector", "A Hora da Estrela", true))
+biblioteca.adicionarLivro(new Livro(3, "Raul Seixas", "O baú do Raul", true))
 
-console.log(hotel.reservas)
+console.log(biblioteca.acervo)
 
-hotel.cancelarReserva(33)
+biblioteca.registrarEmprestimo(2)
 
 console.log()
 
-console.log(hotel.reservas)
+console.log(biblioteca.acervo)
 
 console.log()
 
-console.log(hotel.consultarStatusQuarto(33))
+if (biblioteca.consultarDisponibilidade(3))
+    console.log("Livro disponivel")
+else
+    console.log("Livro Indisponivel")
